@@ -14,3 +14,9 @@ def generate_lotto_numbers_mega_millions(self):
     mm_main_numbers = random.sample(range(1, 70), 5)
     mm_mega_ball = random.randint(1, 24)
     return mm_main_numbers, mm_mega_ball
+
+class LottoNumberGenerator:
+        def __init__ (self, co_generator, pb_generator, mm_generator):
+            self.co_generator = generate_lotto_numbers_colorado_lotto
+            self.pb_generator = generate_lotto_numbers_power_ball
+            self.mm_generator = generate_lotto_numbers_mega_millions
