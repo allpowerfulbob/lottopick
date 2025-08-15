@@ -1,3 +1,5 @@
+# Copyright (c) Bob Sheets 2025 all rights reserved
+# Powerball and Megamillions propety of their respective owners
 # Import generate lotto numbers module
 import GenerateLottoNumbers
 import re
