@@ -8,15 +8,19 @@ import unittest
 def main():
 
     choice = input("Choose a lottery type (Colorado, Power Ball, Mega Millions): ")
+    tickets = int(input("How many tickets would you like to generate? "))
     if re.match("Colorado", choice, re.IGNORECASE):
-        print("Here are your Colorado Lottery Numbers: " +
-              str(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto()))
+        for _ in range(tickets):
+            print("Here are your Colorado Lottery Numbers: " +
+                str(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto()))
     elif re.match("Power Ball", choice, re.IGNORECASE):
-        print("Here are your Power Ball Numbers: " +
-              str(GenerateLottoNumbers.generate_lotto_numbers_power_ball()))
+        for _ in range(tickets):
+            print("Here are your Power Ball Numbers: " +
+                str(GenerateLottoNumbers.generate_lotto_numbers_power_ball()))
     elif re.match("Mega Millions", choice, re.IGNORECASE):
-        print("Here are your Mega Millions Numbers: " +
-              str(GenerateLottoNumbers.generate_lotto_numbers_mega_millions()))
+        for _ in range(tickets):
+            print("Here are your Mega Millions Numbers: " +
+                str(GenerateLottoNumbers.generate_lotto_numbers_mega_millions()))
     else: print("Invalid choice. Please try again.")
 
 if __name__ == '__main__':
