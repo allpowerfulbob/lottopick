@@ -10,11 +10,14 @@ def main():
 
     choice = input("Choose a lottery type (Colorado, Power Ball, Mega Millions): ")
     if re.match("Colorado", choice, re.IGNORECASE):
-        print("Here are your Colorado Lottery Numbers: " + str(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto()))
+        print("Here are your Colorado Lottery Numbers: " + 
+              str(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto()))
     elif re.match("Power Ball", choice, re.IGNORECASE):
-        print("Here are your Power Ball Numbers: " + str(GenerateLottoNumbers.generate_lotto_numbers_power_ball()))
+        print("Here are your Power Ball Numbers: " + 
+              str(GenerateLottoNumbers.generate_lotto_numbers_power_ball()))
     elif re.match("Mega Millions", choice, re.IGNORECASE):
-        print("Here are your Mega Millions Numbers: " + str(GenerateLottoNumbers.generate_lotto_numbers_mega_millions()))
+        print("Here are your Mega Millions Numbers: " + 
+              str(GenerateLottoNumbers.generate_lotto_numbers_mega_millions()))
     else: print("Invalid choice. Please try again.")
 
 
