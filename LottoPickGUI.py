@@ -2,24 +2,33 @@
 # Powerball and Megamillions propety of their respective owners
 # Import the tkinter module
 import tkinter as tk
-# Import tkterminal
-from tkterminal import Terminal
 # Import the subprocess module
 import subprocess as sp
+# Import the tkterminal module
+from tkterminal import Terminal
 # Import the LottoPickMain module
 import LottoPickMain
 
-def run_lotto_pick():
-    sp.call(["python", "LottoPickMain.py"])
+class LottoPick:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Lotto Pick")
 
-root = tk.Tk()
-root.title("Lotto Pick")
-root.geometry("400x400")
-root.configure(background="green")
-tk.Label(root, text ="Welcome to Lotto Pick!").pack()
-button = tk.Button(root, text="Generate Lotto Numbers", command=run_lotto_pick)
-button.pack()
-terminal = Terminal(root)
-terminal.pack(expand=True, fill=tk.BOTH)
+        def run_lotto_pick():
+            sp.call(["python", "LottoPickMain.py"])
 
-root.mainloop()
+        def lotto_input():
+            user_input = tk.entry.get()
+            print(user_input)
+
+        root = tk.Tk()
+        root.title("Lotto Pick")
+        root.geometry("400x400")
+        root.configure(background="green")
+        tk.Label(root, text ="Welcome to Lotto Pick!").pack()
+        button = tk.Button(root, text="Generate Lotto Numbers", command=run_lotto_pick)
+        button.pack()
+        terminal = Terminal(root, width=80, height=20)
+        terminal.pack()
+
+        root.mainloop()
