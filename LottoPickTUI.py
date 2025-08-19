@@ -1,17 +1,23 @@
 # Import textual app
-from textual.app import App
+from textual.app import App, ComposeResult
 # Import textual widgets
 from textual.widgets import Button, Header, Static
+from textual.screen import Screen
 from textual import events
-from textual.views import _window_view
 # Import the LottoPickMain module
 import LottoPickMain
 # Import GenerateLottoNumbers
 import GenerateLottoNumbers
 
+class LottoPickAppScreen(Screen):
+    def compose(self) -> ComposeResult:
+        yield Static(id="LottoPick")
+
 class LottoPickApp(App):
-    def compose(self) -> any:
-        yield _window_view(id="LottoPick")
+    SCREENS = {"LottoPick": LottoPickAppScreen}
+
+    def on_mount(self) -> None:
+        self.push_screen("LottoPick")
 
     def action_set_background(self, color: str) -> None:
         self.screen.styles.background = color
@@ -26,9 +32,19 @@ class LottoPickApp(App):
     def action_button_clicked(self) -> None:
         print("Generating Lotto Numbers...")
 
-    def compose(self) -> GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto:
+    def compose(self) -> ComposeResult:
         button = Button("Generate Lotto Numbers for Colorado Lottery")
-        button.on_click(self.GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
+        button._on_click(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
+        yield button
+
+    def compose(self) -> ComposeResult:
+        button = Button("Generate Lotto Numbers for Power Ball.")
+        button._on_click(GenerateLottoNumbers.generate_lotto_numbers_power_ball)
+        yield button
+
+    def compose(self) -> ComposeResult:
+        button = Button("Generate Lotto Numbers for Mega Millions.")
+        button._on_click(GenerateLottoNumbers.generate_lotto_numbers_mega_millions)
         yield button
 
 
