@@ -1,14 +1,18 @@
 # Import textual app
 from textual.app import App
 # Import textual widgets
-from textual.widgets import Button, Header
+from textual.widgets import Button, Header, Static
 from textual import events
+from textual.views import _window_view
 # Import the LottoPickMain module
 import LottoPickMain
 # Import GenerateLottoNumbers
 import GenerateLottoNumbers
 
 class LottoPickApp(App):
+    def compose(self) -> any:
+        yield _window_view(id="LottoPick")
+
     def action_set_background(self, color: str) -> None:
         self.screen.styles.background = color
 
