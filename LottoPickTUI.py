@@ -4,6 +4,7 @@ from textual.app import App, ComposeResult
 from textual.widgets import Button, Header, Static
 from textual.screen import Screen
 from textual import events
+from textual.containers import Horizontal, VerticalScroll
 # Import the LottoPickMain module
 import LottoPickMain
 # Import GenerateLottoNumbers
