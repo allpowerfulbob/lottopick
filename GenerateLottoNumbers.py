@@ -8,11 +8,17 @@ def generate_lotto_numbers_colorado_lotto():
 
 def generate_lotto_numbers_power_ball():
     pb_main_numbers = random.sample(range(1, 70), 5)
+    return sorted(pb_main_numbers)
+
+def generate_lotto_numbers_power_ball_powerball():
     power_ball = random.randint(1, 26)
-    return sorted(pb_main_numbers), power_ball
+    return power_ball
 
 def generate_lotto_numbers_mega_millions():
     mm_main_numbers = random.sample(range(1, 70), 5)
+    return sorted(mm_main_numbers)
+
+def generate_lotto_numbers_mega_millions_megaball():
     mm_mega_ball = random.randint(1, 24)
-    return sorted(mm_main_numbers), mm_mega_ball
+    return mm_mega_ball
 
