@@ -9,23 +9,20 @@ class TestLottoPick(unittest.TestCase):
     def test_lotto_pick_colorado(self, mock_input, choice, tickets):
         @unittest.skipIf(choice == "power ball or mega millions", re.IGNORECASE,
                          "Testing Colorado Input")
-        @patch('builtins.input', side_effect=['choice', 'tickets'])
+        @patch('builtins.input', return_value=['choice', 'tickets']):
         choice = mock_input('colorado')
         tickets = mock_input(1)
-        def test_lotto_pick_colorado(self):
-            result = LottoPickMain.main()
-            self.assertEqual(result("colorado", re.IGNORECASE), True)
+        result = LottoPickMain.main()
+        self.assertEqual(result("colorado", re.IGNORECASE), True)
 
     def test_lotto_pick_power_ball(self, mock_input):
         @unittest.skipIf("colorado", "mega millions", re.IGNORECASE)
-        @patch('builtins.input', side_effect=['Power Ball', 1])
-        def test_lotto_pick_power_ball(self):
-            result = LottoPickMain.main()
-            self.assertEqual(result("power ball", re.IGNORECASE), True)
+        @patch('builtins.input', return_value=('choice', 'tickets')):
+        result = LottoPickMain.main()
+        self.assertEqual(result("power ball", re.IGNORECASE), True)
 
     def test_lotto_pick_mega_millions(self, mock_input):
         @unittest.skipif("colorado", "power ball", re.IGNORECASE)
-        @patch('builtins.input', side_effect=['Mega Millions', 1])
-        def test_lotto_pick_mega_millions(self):
-            result = LottoPickMain.main()
-            self.assertEqual(result("mega millions", re.IGNORECASE), True)
+        @patch('builtins.input', return_value=('choice', 'tickets')):
+        result = LottoPickMain.main()
+        self.assertEqual(result("mega millions", re.IGNORECASE), True)
