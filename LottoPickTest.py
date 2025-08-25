@@ -15,14 +15,14 @@ class TestLottoPick(unittest.TestCase):
         result = LottoPickMain.main()
         self.assertEqual(result("colorado", re.IGNORECASE), True)
 
-    @unittest.skipIf("colorado or mega millions", "Testing Power Ball"
+    @unittest.skipIf("colorado or mega millions", "Testing Power Ball")
     @patch('builtins.input', return_value=['choice', 'tickets'])
     def test_lotto_pick_power_ball(self, mock_input, choice, tickets):
         
         result = LottoPickMain.main()
         self.assertEqual(result("power ball", re.IGNORECASE), True)
 
-    @unittest.skipif("colorado or power ball", "Testing Mega Millions")
+    @unittest.skipIf("colorado or power ball", "Testing Mega Millions")
     @patch('builtins.input', return_value=['choice', 'tickets'])
     def test_lotto_pick_mega_millions(self, mock_input, choice, ticktets):
         
