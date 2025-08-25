@@ -6,7 +6,7 @@ import LottoPickMain
 
 class TestLottoPick(unittest.TestCase):
     
-    @unittest.skipIf(choice == "power ball or mega millions", re.IGNORECASE,
+    @unittest.skipIf("power ball or mega millions", re.IGNORECASE,
                          "Testing Colorado Input")
     @patch('builtins.input', return_value=['choice', 'tickets'])
     def test_lotto_pick_colorado(self, mock_input, choice, tickets):
