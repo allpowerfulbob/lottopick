@@ -27,3 +27,6 @@ class TestLottoPick(unittest.TestCase):
         tickets = mock_input('1')
         result = LottoPickMain.main()
         self.assertEqual(result("mega millions"), True)
+
+if __name__ == '__main__':
+    unittest.main
