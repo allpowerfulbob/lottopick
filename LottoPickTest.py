@@ -7,26 +7,17 @@ import GenerateLottoNumbers
 
 class TestLottoPick(unittest.TestCase):
     
-    @patch('builtins.input', return_value=('choice', 'tickets'))
+    @patch('builtins.input', side_effect=('colorado', '1'))
     def test_lotto_pick_colorado(self, mock_input):
-        choice = (mock_input('colorado'))
-        tickets = (mock_input('1'))
-        result = LottoPickMain.main()
-        self.assertEqual(result("colorado"), True)
+        self.assertEqual("colorado", GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
 
-    @patch('builtins.input', return_value=('choice', 'tickets'))
+    @patch('builtins.input', side_effect=('power ball', '1'))
     def test_lotto_pick_power_ball(self, mock_input):
-        choice = mock_input('power ball')
-        tickets = mock_input('1')
-        result = LottoPickMain.main()
-        self.assertEqual(result("power ball"), True)
+        self.assertEqual("power ball")
 
-    @patch('builtins.input', return_value=('choice', 'tickets'))
+    @patch('builtins.input', side_effect=('mega millions', '1'))
     def test_lotto_pick_mega_millions(self, mock_input):
-        choice = mock_input('mega millions')
-        tickets = mock_input('1')
-        result = LottoPickMain.main()
-        self.assertEqual(result("mega millions"), True)
+        self.assertEqual("mega millions")
 
 if __name__ == '__main__':
     unittest.main
