@@ -13,11 +13,11 @@ class TestLottoPick(unittest.TestCase):
 
     @patch('builtins.input', side_effect=('power ball', '1'))
     def test_lotto_pick_power_ball(self, mock_input):
-        self.assertEqual("power ball")
+        self.assertEqual("power ball", GenerateLottoNumbers.generate_lotto_numbers_power_ball)
 
     @patch('builtins.input', side_effect=('mega millions', '1'))
     def test_lotto_pick_mega_millions(self, mock_input):
-        self.assertEqual("mega millions")
+        self.assertEqual("mega millions", GenerateLottoNumbers.generate_lotto_numbers_mega_millions)
 
 if __name__ == '__main__':
     unittest.main
