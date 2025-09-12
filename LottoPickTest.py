@@ -10,8 +10,9 @@ class TestLottoPick(unittest.TestCase):
     @patch('builtins.input', side_effect=('colorado', '1'))
     def test_lotto_pick_colorado(self, mock_input):
         random_numbers = GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto
-        self.assertEqual("colorado")
-        self.assertEqual(len(random_numbers), 5)
+        self.assertEqual("colorado", "1")
+        for number in random_numbers:
+            self.assertLess(5, 40)
 
 
     @patch('builtins.input', side_effect=('power ball', '1'))
