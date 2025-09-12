@@ -1,11 +1,15 @@
 # Import required modules
 import unittest
+import random
 from unittest.mock import patch
 import re
 import LottoPickMain
 import GenerateLottoNumbers
 
 class TestLottoPick(unittest.TestCase):
+
+    def setUp(self):
+        random.seed(42)
     
     @patch('builtins.input', side_effect=('colorado', '1'))
     def test_lotto_pick_colorado(self, mock_input):
