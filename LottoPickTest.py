@@ -20,7 +20,7 @@ class TestLottoPick(unittest.TestCase):
     def test_lotto_pick_colorado(self, mock_input):
         random_numbers_colorado = random.random
         (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
-        self.assertEqual("colorado", "GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto")
+        self.assertEqual(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "colorado")
         for number in random_numbers_colorado:
             self.assertLess(5, 40)
 
