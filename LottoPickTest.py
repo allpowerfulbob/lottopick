@@ -54,4 +54,4 @@ class TestLottoPick(unittest.TestCase):
             self.assertLess(1, 24)
 
 if __name__ == '__main__':
-    unittest.main
+    unittest.main()
