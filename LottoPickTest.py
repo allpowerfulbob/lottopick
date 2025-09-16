@@ -16,12 +16,7 @@ class TestLottoPick(unittest.TestCase):
         random.seed(42)
     
     # Test for the Colorado Lottery pick
-    @patch('builtins.input', side_effect=('colorado', '1'))
-    def test_lotto_pick_colorado(self, mock_input):
-        
-        (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
-        self.assertEqual(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "colorado")
-        
+
     @patch('builtins.input', side_effect=('colorado', '1'))
     def test_lotto_pick_colorado_numbers(self, mock_input):
         random_numbers_colorado = random.random
@@ -32,11 +27,6 @@ class TestLottoPick(unittest.TestCase):
 
 
     # Test for the Power Ball Lottery Pick
-    @patch('builtins.input', side_effect=('power ball', '1'))
-    def test_lotto_pick_power_ball(self, mock_input):
-        self.assertEqual("power ball", "GenerateLottoNumbers.generate_lotto_numbers_power_ball",
-                         "GenerateLottoNumbers.generate_lotto_numbers_power_ball_powerball")
-    
     @patch('builtins.input', side_effect=('power ball', '1'))
     def test_lotto_pick_power_ball_numbers(self, mock_input):
         random_numbers_power_ball = random.random
@@ -54,10 +44,6 @@ class TestLottoPick(unittest.TestCase):
             (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "5")
 
     # Test for the Mega Millions Lottery Pick
-    @patch('builtins.input', side_effect=('mega millions', '1'))
-    def test_lotto_pick_mega_millions(self, mock_input):
-        self.assertEqual("mega millions", "GenerateLottoNumbers.generate_lotto_numbers_mega_millions",
-                         "GenerateLottoNumbers.generate_lotto_numbers_mega_millions_megaball")
     
     @patch('builtins.input', side_effect=('mega millions', '1'))
     def test_lotto_pick_mega_millions_numbers(self, mock_input):
