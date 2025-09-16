@@ -22,10 +22,11 @@ class TestLottoPick(unittest.TestCase):
         (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
         self.assertEqual(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "colorado")
         
-    @patch('builtins.input', side_effect=('mega millions', '1'))
+    @patch('builtins.input', side_effect=('colorado', '1'))
     def test_lotto_pick_colorado_numbers(self, mock_input):
         random_numbers_colorado = random.random
-        for number in random_numbers_colorado:
+        for number in range (1, 40):
+            random_numbers_colorado
             self.assertEqual
             (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "2, 8, 15, 16, 18")
 
@@ -33,30 +34,46 @@ class TestLottoPick(unittest.TestCase):
     # Test for the Power Ball Lottery Pick
     @patch('builtins.input', side_effect=('power ball', '1'))
     def test_lotto_pick_power_ball(self, mock_input):
-        random_numbers_power_ball = random.random
-        (GenerateLottoNumbers.generate_lotto_numbers_power_ball)
-        random_number_power_ball = random.random
-        (GenerateLottoNumbers.generate_lotto_numbers_power_ball_powerball)
         self.assertEqual("power ball", "GenerateLottoNumbers.generate_lotto_numbers_power_ball",
                          "GenerateLottoNumbers.generate_lotto_numbers_power_ball_powerball")
-        for number in random_numbers_power_ball:
-            self.assertLess(5, 70)
-        for number in random_number_power_ball:
-            self.assertless(1, 26)
+    
+    @patch('builtins.input', side_effect=('power ball', '1'))
+    def test_lotto_pick_power_ball_numbers(self, mock_input):
+        random_numbers_power_ball = random.random
+        for number in range (1, 70):
+            random_numbers_power_ball
+            self.assertEqual
+            (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "4, 15, 29, 32, 36")
+    
+    @patch('builtins.input', side_effect=('power ball', '1'))
+    def test_lotto_pick_power_ball_power_ball(self, mock_input):
+        random_numbers_power_ball_power_ball = random.random
+        for number in range (1, 26):
+            random_numbers_power_ball_power_ball
+            self.assertEqual
+            (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "5")
 
     # Test for the Mega Millions Lottery Pick
     @patch('builtins.input', side_effect=('mega millions', '1'))
     def test_lotto_pick_mega_millions(self, mock_input):
-        random_numbers_mega_millions = random.random
-        (GenerateLottoNumbers.generate_lotto_numbers_mega_millions)
-        random_number_mega_millions = random.random
-        (GenerateLottoNumbers.generate_lotto_numbers_mega_millions_megaball)
         self.assertEqual("mega millions", "GenerateLottoNumbers.generate_lotto_numbers_mega_millions",
                          "GenerateLottoNumbers.generate_lotto_numbers_mega_millions_megaball")
-        for number in random_numbers_mega_millions:
-            self.assertLess(5, 70)
-        for number in random_number_mega_millions:
-            self.assertLess(1, 24)
+    
+    @patch('builtins.input', side_effect=('mega millions', '1'))
+    def test_lotto_pick_mega_millions_numbers(self, mock_input):
+        random_numbers_mega_millions = random.random
+        for number in range (1, 70):
+            random_numbers_mega_millions
+            self.assertEqual
+            (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "4, 15, 29, 32, 36")
+    
+    @patch('builtins.input', side_effect=('mega millions', '1'))
+    def test_lotto_pick_mega_millions_mega_ball(self, mock_input):
+        random_numbers_mega_millions_mega_ball = random.random
+        for number in range (1, 26):
+            random_numbers_mega_millions_mega_ball
+            self.assertEqual
+            (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "5")
 
 if __name__ == '__main__':
     unittest.main()
