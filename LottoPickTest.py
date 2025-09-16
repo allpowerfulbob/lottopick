@@ -22,7 +22,7 @@ class TestLottoPick(unittest.TestCase):
         (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
         self.assertEqual(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "colorado")
         for number in random_numbers_colorado:
-            self.assertLess(5, 40)
+            self.assertLess(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, 40)
 
 
     # Test for the Power Ball Lottery Pick
