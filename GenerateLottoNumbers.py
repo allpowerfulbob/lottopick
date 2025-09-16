@@ -3,6 +3,9 @@
 # Import the random module
 import random
 
+# Commented out seed, remove # to unittest
+random.seed (42)
+
 def generate_lotto_numbers_colorado_lotto():
      return sorted(random.sample(range(1, 40), 5))
 

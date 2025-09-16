@@ -18,11 +18,16 @@ class TestLottoPick(unittest.TestCase):
     # Test for the Colorado Lottery pick
     @patch('builtins.input', side_effect=('colorado', '1'))
     def test_lotto_pick_colorado(self, mock_input):
-        random_numbers_colorado = random.random
+        
         (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto)
         self.assertEqual(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "colorado")
+        
+    @patch('builtins.input', side_effect=('mega millions', '1'))
+    def test_lotto_pick_colorado_numbers(self, mock_input):
+        random_numbers_colorado = random.random
         for number in random_numbers_colorado:
-            self.assertLess(GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, 40)
+            self.assertEqual
+            (GenerateLottoNumbers.generate_lotto_numbers_colorado_lotto, "2, 8, 15, 16, 18")
 
 
     # Test for the Power Ball Lottery Pick
